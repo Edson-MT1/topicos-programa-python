@@ -24,9 +24,11 @@ class MainWindow(QMainWindow):
         self.ui.itemCrearBd.triggered.connect(lambda: self.cambio_pag_2())
         self.ui.itemNube.triggered.connect(lambda: self.crear_wordcloud())
         self.ui.itemHistograma.triggered.connect(lambda: self.crear_histograma())
+        self.ui.itemEntrenamiento.triggered.connect(lambda: self.abrirRedVista())
         self.ui.pushButtonAbrirArchivoCSV.clicked.connect(self.abrir_archivo)
         self.ui.pushButtonBuscar.clicked.connect(self.trabajarPalabras)
         self.ui.pushButtonGuardarArchivoFiltrado.clicked.connect(self.guardarArchivoFiltrado)
+        
         
     def abrir_archivo(self):
         try:
@@ -46,6 +48,9 @@ class MainWindow(QMainWindow):
 
     def cambio_pag_1(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.frecuencia)
+
+    def abrirRedVista(self):
+        self.ui.stackedWidget.setCurrentWidget(self.ui.neuronal)
 
     def crear_histograma(self):
         try:
