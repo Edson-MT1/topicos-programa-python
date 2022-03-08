@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from PyQt5.QtWidgets import QApplication,QMainWindow,QFileDialog,QMessageBox
-from stop_words import get_stop_words
+from stop_words import get_stop_words 
 import os
 
 class Histograma:

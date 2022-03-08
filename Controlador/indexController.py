@@ -1,14 +1,19 @@
 from msilib.schema import Directory
 from multiprocessing.sharedctypes import Value
-from tkinter import filedialog, messagebox
 from unittest import case
 from matplotlib.pyplot import text
 from PyQt5.QtWidgets import QApplication,QMainWindow,QFileDialog
+from Controlador.redNeuronalController import NeuralNetwork
 import sys
+from PyQt5 import QtCore
+from PyQt5.QtWidgets import QMessageBox
+
+
 
 from numpy import *
 from Vista.ventana_ui import Ui_MainWindow
 import pandas as pd
+import numpy as np
 import os
 
 class Holamundo(QMainWindow):
@@ -64,7 +69,84 @@ class Holamundo(QMainWindow):
         palabrasfiltradas = df[df['Texto'].str.contains(listaPalabras, case=False, na=False, regex=True)]
         #palabrasfiltradas.to_csv("C:/Users/USER/Downloads/palabrasfiltradas.csv")
         palabrasfiltradas.to_csv(os.path.abspath("palabrasfiltradas.csv"))
+
+    def load_data(self):
+        self.all_data = pd.read_csv(self.path)
         
+        input_columns =  self.all_data[['Actores', 'Casting', 'Cortometraje', 'Cameo', 'Director', 'Cámara', 'Doblaje', 'Guión']]
+        output_column = self.all_data[['Salida']]
+        
+        self.training_set_inputs = input_columns[:].values
+        self.training_set_outputs = output_column.values
+        
+    def train(self):
+        self.load_data()
+        self.neural_network = NeuralNetwork()
+    
+        if not self.view.lineEditIterations.text():
+            self.view.textBrowserInitialWeights.setText(np.array2string(self.neural_network.synaptic_weights))
+            self.neural_network.train(self.training_set_inputs, self.training_set_outputs)
+            self.view.textBrowserFinalWeights.setText(np.array2string(self.neural_network.synaptic_weights))
+        else:
+            iterations = int(self.view.lineEditIterations.text())
+            self.view.textBrowserInitialWeights.setText(np.array2string(self.neural_network.synaptic_weights))
+            self.neural_network.train(self.training_set_inputs, self.training_set_outputs, iterations)
+            self.view.textBrowserFinalWeights.setText(np.array2string(self.neural_network.synaptic_weights))
+            
+        self.show_dialog()
+        
+    def show_dialog(self):
+        dlg = QMessageBox(self.view)
+        dlg.setWindowTitle("")
+        dlg.setText("¡El entrenamiento ha finalizado!")
+        button = dlg.exec()
+
+        # if button == QMessageBox.Ok:
+        #     print("OK!")
+    
+    def onStateChange(self, state):
+        
+        if state == QtCore.Qt.Checked:
+            if self.view.sender() == self.view.checkboxActors_2:
+                self.question[0] = 1
+            elif self.view.sender() == self.view.checkboxCasting_2:
+                self.question[1] = 1
+            elif self.view.sender() == self.view.checkboxShortFilm_2:
+                self.question[2] = 1
+            elif self.view.sender() == self.view.checkboxCameo_2:
+                self.question[3] = 1
+            elif self.view.sender() == self.view.checkboxDirector_2:
+                self.question[4] = 1
+            elif self.view.sender() == self.view.checkboxCamera_2:
+                self.question[5] = 1
+            elif self.view.sender() == self.view.checkboxDubbing_2:
+                self.question[6] = 1
+            elif self.view.sender() == self.view.checkboxScript_2:
+                self.question[7] = 1
+        else:
+            if self.view.sender() == self.view.checkboxActors_2:
+                    self.question[0] = 0
+            elif self.view.sender() == self.view.checkboxCasting_2:
+                self.question[1] = 0
+            elif self.view.sender() == self.view.checkboxShortFilm_2:
+                self.question[2] = 0
+            elif self.view.sender() == self.view.checkboxCameo_2:
+                self.question[3] = 0
+            elif self.view.sender() == self.view.checkboxDirector_2:
+                self.question[4] = 0
+            elif self.view.sender() == self.view.checkboxCamera_2:
+                self.question[5] = 0
+            elif self.view.sender() == self.view.checkboxDubbing_2:
+                self.question[6] = 0
+            elif self.view.sender() == self.view.checkboxScript_2:
+                self.question[7] = 0
+        print(self.question)
+    
+    def send(self):
+        print ("Considering new situation [1, 0, 0, 1, 0, 1, 0, 1] -> ?: ")
+        print (self.neural_network.think(np.array(self.question)))
+        ans = np.array2string(self.neural_network.think(np.array(self.question)))
+        self.view.lineEditAns.setText(ans)  
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
