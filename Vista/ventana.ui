@@ -151,20 +151,6 @@
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="5" column="1">
-        <widget class="QLabel" name="label_14">
-         <property name="text">
-          <string>Seleccione nuevas situaciones:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Seleccione el archivo para entrenar la red</string>
-         </property>
-        </widget>
-       </item>
        <item row="14" column="1">
         <widget class="QLabel" name="label_12">
          <property name="text">
@@ -172,17 +158,17 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="2">
-        <widget class="QPushButton" name="pushButtonAbrirArchivo_DataSet">
+       <item row="11" column="1">
+        <widget class="QCheckBox" name="checkBoxEscuela">
          <property name="text">
-          <string>Seleccionar</string>
+          <string>Escuela</string>
          </property>
         </widget>
        </item>
-       <item row="6" column="2">
-        <widget class="QPushButton" name="pushButtonBuscar_DataSet">
+       <item row="8" column="1">
+        <widget class="QCheckBox" name="checkBoxDepresion">
          <property name="text">
-          <string>Buscar</string>
+          <string>Depresion</string>
          </property>
         </widget>
        </item>
@@ -199,80 +185,10 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="1">
-        <widget class="QCheckBox" name="checkBoxSuicidio">
+       <item row="6" column="2">
+        <widget class="QPushButton" name="pushButtonBuscar_DataSet">
          <property name="text">
-          <string>Suicidio</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QCheckBox" name="checkBoxTristeza">
-         <property name="text">
-          <string>Tristeza</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="1">
-        <widget class="QCheckBox" name="checkBoxMascota">
-         <property name="text">
-          <string>Mascota</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="1">
-        <widget class="QCheckBox" name="checkBoxUniversidad">
-         <property name="text">
-          <string>Universidad</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="1">
-        <widget class="QCheckBox" name="checkBoxEscuela">
-         <property name="text">
-          <string>Escuela</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="1">
-        <widget class="QCheckBox" name="checkBoxFamilia">
-         <property name="text">
-          <string>Familia</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1">
-        <widget class="QCheckBox" name="checkBoxDepresion">
-         <property name="text">
-          <string>Depresion</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="2">
-        <widget class="QPushButton" name="pushButtonEntrenar">
-         <property name="text">
-          <string>Entrenar</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0" alignment="Qt::AlignLeft">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Direccion del Archivo:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLabel" name="labelDireccionArchivo_2">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QCheckBox" name="checkBoxAnsiedad">
-         <property name="text">
-          <string>Ansiedad</string>
+          <string>Buscar</string>
          </property>
         </widget>
        </item>
@@ -297,6 +213,27 @@
          </property>
         </widget>
        </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Seleccione el archivo para entrenar la red</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="1">
+        <widget class="QCheckBox" name="checkBoxFamilia">
+         <property name="text">
+          <string>Familia</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="labelDireccionArchivo_2">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_10">
          <property name="text">
@@ -304,10 +241,73 @@
          </property>
         </widget>
        </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>Seleccione nuevas situaciones:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="2">
+        <widget class="QPushButton" name="pushButtonEntrenar">
+         <property name="text">
+          <string>Entrenar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Direccion del Archivo:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QCheckBox" name="checkBoxSuicidio">
+         <property name="text">
+          <string>Suicidio</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="pushButtonAbrirArchivo_DataSet">
+         <property name="text">
+          <string>Seleccionar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QCheckBox" name="checkBoxTristeza">
+         <property name="text">
+          <string>Tristeza</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1">
+        <widget class="QCheckBox" name="checkBoxMascota">
+         <property name="text">
+          <string>Mascota</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QCheckBox" name="checkBoxUniversidad">
+         <property name="text">
+          <string>Universidad</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QCheckBox" name="checkBoxAnsiedad">
+         <property name="text">
+          <string>Ansiedad</string>
+         </property>
+        </widget>
+       </item>
        <item row="3" column="1">
         <widget class="QLineEdit" name="lineEditIteraciones"/>
        </item>
-       <item row="15" column="1" colspan="2">
+       <item row="16" column="1">
         <widget class="QLabel" name="resultado_Entrenamiento">
          <property name="text">
           <string/>
