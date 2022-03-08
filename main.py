@@ -52,6 +52,7 @@ class MainWindow(QMainWindow):
         self.ui.pushButtonGuardarArchivoFiltrado.clicked.connect(self.guardarArchivoFiltrado)
         self.ui.pushButtonAbrirArchivo_DataSet.clicked.connect(self.abrir_archivo)
         self.ui.pushButtonEntrenar.clicked.connect(self.train)
+        self.ui.pushButtonBuscar_DataSet.clicked.connect(self.send)
         
 
     def abrir_archivo(self):
@@ -140,38 +141,38 @@ class MainWindow(QMainWindow):
     def onStateChange(self, state):
         
         if state == QtCore.Qt.Checked:
-            if self.hola.sender() == self.ui.checkBoxSuicidio:
+            if self.sender() == self.ui.checkBoxSuicidio:
                 self.question[0] = 1
-            elif self.hola.sender() == self.ui.checkBoxTristeza:
+            elif self.sender() == self.ui.checkBoxTristeza:
                 self.question[1] = 1
-            elif self.hola.sender() == self.ui.checkBoxMascota:
+            elif self.sender() == self.ui.checkBoxMascota:
                 self.question[2] = 1
-            elif self.hola.sender() == self.ui.checkBoxUniversidad:
+            elif self.sender() == self.ui.checkBoxUniversidad:
                 self.question[3] = 1
-            elif self.hola.sender() == self.ui.checkBoxEscuela:
+            elif self.sender() == self.ui.checkBoxEscuela:
                 self.question[4] = 1
-            elif self.hola.sender() == self.ui.checkBoxFamilia:
+            elif self.sender() == self.ui.checkBoxFamilia:
                 self.question[5] = 1
-            elif self.hola.sender() == self.ui.checkBoxDepresion:
+            elif self.sender() == self.ui.checkBoxDepresion:
                 self.question[6] = 1
-            elif self.hola.sender() == self.ui.checkBoxAnsiedad:
+            elif self.sender() == self.ui.checkBoxAnsiedad:
                 self.question[7] = 1
         else:
-            if self.hola.sender() == self.ui.checkBoxSuicidio:
+            if self.sender() == self.ui.checkBoxSuicidio:
                     self.question[0] = 0
-            elif self.hola.sender() == self.ui.checkBoxTristeza:
+            elif self.sender() == self.ui.checkBoxTristeza:
                 self.question[1] = 0
-            elif self.hola.sender() == self.ui.checkBoxMascota:
+            elif self.sender() == self.ui.checkBoxMascota:
                 self.question[2] = 0
-            elif self.hola.sender() == self.ui.checkBoxUniversidad:
+            elif self.sender() == self.ui.checkBoxUniversidad:
                 self.question[3] = 0
-            elif self.hola.sender() == self.ui.checkBoxEscuela:
+            elif self.sender() == self.ui.checkBoxEscuela:
                 self.question[4] = 0
-            elif self.hola.sender() == self.ui.checkBoxFamilia:
+            elif self.sender() == self.ui.checkBoxFamilia:
                 self.question[5] = 0
-            elif self.hola.sender() == self.ui.checkBoxDepresion:
+            elif self.sender() == self.ui.checkBoxDepresion:
                 self.question[6] = 0
-            elif self.hola.sender() == self.ui.checkBoxAnsiedad:
+            elif self.sender() == self.ui.checkBoxAnsiedad:
                 self.question[7] = 0
         print(self.question)
     
