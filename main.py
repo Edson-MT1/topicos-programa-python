@@ -121,19 +121,21 @@ class MainWindow(QMainWindow):
             #agregar iteraciones desde interfaz
             iteraciones = int(self.ui.lineEditIteraciones.text())
             self.ui.resultado_Entrenamiento.setText(np.array2string(self.neural_network.synaptic_weights))
-            self.neural_network.train(self.training_set_inputs, self.training_set_outputs, iteraciones)
+            self.neural_network.train(training_set_inputs,training_set_outputs, iteraciones)
             self.ui.resultado_Entrenamiento.setText(np.array2string(self.neural_network.synaptic_weights))
             
-        self.show_dialog()
-        
+            print("red entrenada")
+
+
     def show_dialog(self):
-        dlg = QMessageBox(self.ui)
+        dlg = QMessageBox(self)
         dlg.setWindowTitle("")
         dlg.setText("¡El entrenamiento ha finalizado!")
         button = dlg.exec()
 
-        # if button == QMessageBox.Ok:
-        #     print("OK!")
+        if button == QMessageBox.Ok:
+            print("OK!")
+        
     
     def onStateChange(self, state):
         
