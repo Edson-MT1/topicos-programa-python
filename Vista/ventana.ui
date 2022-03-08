@@ -185,13 +185,6 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="2">
-        <widget class="QPushButton" name="pushButtonBuscar_DataSet">
-         <property name="text">
-          <string>Buscar</string>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="1" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_11">
          <property name="font">
@@ -245,13 +238,6 @@
         <widget class="QLabel" name="label_14">
          <property name="text">
           <string>Seleccione nuevas situaciones:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="2">
-        <widget class="QPushButton" name="pushButtonEntrenar">
-         <property name="text">
-          <string>Entrenar</string>
          </property>
         </widget>
        </item>
@@ -311,6 +297,20 @@
         <widget class="QLabel" name="resultado_Entrenamiento">
          <property name="text">
           <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="2">
+        <widget class="QPushButton" name="pushButtonBuscar_DataSet">
+         <property name="text">
+          <string>Enviar Situaciones</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QPushButton" name="pushButtonEntrenar">
+         <property name="text">
+          <string>Entrenar</string>
          </property>
         </widget>
        </item>
