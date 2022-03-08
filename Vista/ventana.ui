@@ -30,7 +30,7 @@
      <enum>QFrame::Plain</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="home"/>
     <widget class="QWidget" name="reduccion">
@@ -144,10 +144,10 @@
      <widget class="QWidget" name="layoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>641</width>
-        <height>391</height>
+        <x>10</x>
+        <y>5</y>
+        <width>661</width>
+        <height>491</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
@@ -200,49 +200,49 @@
         </widget>
        </item>
        <item row="9" column="1">
-        <widget class="QCheckBox" name="checkBox_4">
+        <widget class="QCheckBox" name="checkBoxSuicidio">
          <property name="text">
           <string>Suicidio</string>
          </property>
         </widget>
        </item>
        <item row="6" column="1">
-        <widget class="QCheckBox" name="checkBox">
+        <widget class="QCheckBox" name="checkBoxTristeza">
          <property name="text">
-          <string>Trizteza</string>
+          <string>Tristeza</string>
          </property>
         </widget>
        </item>
        <item row="13" column="1">
-        <widget class="QCheckBox" name="checkBox_8">
+        <widget class="QCheckBox" name="checkBoxMascota">
          <property name="text">
           <string>Mascota</string>
          </property>
         </widget>
        </item>
        <item row="10" column="1">
-        <widget class="QCheckBox" name="checkBox_5">
+        <widget class="QCheckBox" name="checkBoxUniversidad">
          <property name="text">
           <string>Universidad</string>
          </property>
         </widget>
        </item>
        <item row="11" column="1">
-        <widget class="QCheckBox" name="checkBox_6">
+        <widget class="QCheckBox" name="checkBoxEscuela">
          <property name="text">
           <string>Escuela</string>
          </property>
         </widget>
        </item>
        <item row="12" column="1">
-        <widget class="QCheckBox" name="checkBox_7">
+        <widget class="QCheckBox" name="checkBoxFamilia">
          <property name="text">
           <string>Familia</string>
          </property>
         </widget>
        </item>
        <item row="8" column="1">
-        <widget class="QCheckBox" name="checkBox_3">
+        <widget class="QCheckBox" name="checkBoxDepresion">
          <property name="text">
           <string>Depresion</string>
          </property>
@@ -270,7 +270,7 @@
         </widget>
        </item>
        <item row="7" column="1">
-        <widget class="QCheckBox" name="checkBox_2">
+        <widget class="QCheckBox" name="checkBoxAnsiedad">
          <property name="text">
           <string>Ansiedad</string>
          </property>
@@ -304,6 +304,16 @@
          </property>
         </widget>
        </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Numero de iteraciones</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="lineEditIteraciones"/>
+       </item>
       </layout>
      </widget>
     </widget>
@@ -315,7 +325,7 @@
      <x>0</x>
      <y>0</y>
      <width>685</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuBD">

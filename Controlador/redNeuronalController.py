@@ -9,7 +9,7 @@ class NeuralNetwork():
         # Modelamos una sola neurona, con 3 conexiones de entrada y una conexión de salida
         # Asignamos los pesos aleatorios a una matriz de 3x1, con valores en el rango de -1 a 1
         # y significa 0
-        self.synaptic_weights = 2 * random.random((3, 1)) - 1
+        self.synaptic_weights = 2 * random.random((8, 1)) - 1
 
     # La función Sigmoid, que describe una curva en forma de S
     # Se pasan la suma ponderada de las entradas a través de esta función para 
