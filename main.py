@@ -98,9 +98,10 @@ class MainWindow(QMainWindow):
         global archivo
         all_data = pd.read_csv(archivo[0])
         print(all_data)
-        input_columns =  all_data[['Tristeza', 'Ansiedad', 'Depresion', 'Suicidio', 'Universidad', 'Escuela', 'Familia', 'Mascota']]
+        input_columns = all_data[['Tristeza', 'Ansiedad', 'Depresion', 'Suicidio', 'Universidad', 'Escuela', 'Familia', 'Mascota']]
         output_column = all_data[['Salida']]
-        
+        global training_set_inputs
+        global training_set_outputs
         training_set_inputs = input_columns[:].values
         training_set_outputs = output_column.values
         
@@ -114,7 +115,7 @@ class MainWindow(QMainWindow):
         if not self.ui.lineEditIteraciones.text():
 
             self.ui.resultado_Entrenamiento.setText(np.array2string(self.neural_network.synaptic_weights))
-            self.neural_network.train(self.training_set_inputs, self.training_set_outputs)
+            self.neural_network.train(training_set_inputs, training_set_outputs, 1000)
             self.ui.resultado_Entrenamiento.setText(np.array2string(self.neural_network.synaptic_weights))
         else:
             #agregar iteraciones desde interfaz
