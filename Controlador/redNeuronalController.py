@@ -1,6 +1,8 @@
 from numpy import exp, array, random, dot
 
 class NeuralNetwork():
+
+    
     def __init__(self):
         # Seed el generador de números aleatorios, con una raíz a fin de generar 
         # los mismo números aleatorios en cada proceso.

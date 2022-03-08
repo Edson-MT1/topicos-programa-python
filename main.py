@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 
 from Vista.ventana_ui import Ui_MainWindow
-from Controlador.indexController import Holamundo
+from Controlador.indexController import palabrasFiltradas
 from Controlador.Histograma import Histograma
 from Controlador.WordCloudController import Nube
 from Controlador.redNeuronalController import NeuralNetwork
@@ -24,7 +24,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()    
-        self.hola = Holamundo   
+        self.hola = palabrasFiltradas   
         self.histograma = Histograma
         self.nube = Nube
         self.ui.setupUi(self)  
@@ -105,9 +105,6 @@ class MainWindow(QMainWindow):
         global training_set_outputs
         training_set_inputs = input_columns[:].values
         training_set_outputs = output_column.values
-        
-        print (training_set_inputs)
-        print (training_set_outputs)
 
     def train(self):
         self.load_data()
@@ -123,6 +120,7 @@ class MainWindow(QMainWindow):
             iteraciones = int(self.ui.lineEditIteraciones.text())
             self.ui.resultado_Entrenamiento.setText(np.array2string(self.neural_network.synaptic_weights))
             self.neural_network.train(training_set_inputs,training_set_outputs, iteraciones)
+            print(iteraciones)
             self.ui.resultado_Entrenamiento.setText(np.array2string(self.neural_network.synaptic_weights))
             
             print("red entrenada")

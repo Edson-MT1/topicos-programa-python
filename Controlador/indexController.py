@@ -16,7 +16,7 @@ import pandas as pd
 import numpy as np
 import os
 
-class Holamundo(QMainWindow):
+class palabrasFiltradas(QMainWindow):
     df = []
     archivo = ""
     palabras = []
@@ -70,7 +70,7 @@ class Holamundo(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = Holamundo()
+    window = palabrasFiltradas()
     window.show()
     app.exec_()
 
